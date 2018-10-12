@@ -1,5 +1,5 @@
 let AWS = require('aws-sdk');
-
+console.log("asasas")
 exports.handler = function(event, context, callback) {
     
 
