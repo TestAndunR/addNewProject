@@ -8,8 +8,7 @@
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "eb050d4d-383c-4606-924d-701488dfa9bd",
-          "0a6cb0a8-7038-472e-8d99-04770a025f9a"
+          "eb050d4d-383c-4606-924d-701488dfa9bd"
         ],
         "isRemovable": false,
         "filePath": "addNewProject"
@@ -30,27 +29,16 @@
           "timeout": 60,
           "runtime": "nodejs8.10"
         }
-      },
-      "0a6cb0a8-7038-472e-8d99-04770a025f9a": {
-        "id": "0a6cb0a8-7038-472e-8d99-04770a025f9a",
-        "parent": "6882b513-80d2-4877-80d0-922e96c16433",
-        "name": "test.js.js",
-        "type": "JS_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": true,
-        "filePath": "addNewProject/test.js.js",
-        "code": "hghg",
-        "triggers": []
       }
     },
-    "deletedFiles": [],
+    "deletedFiles": [
+      "addNewProject/test.js.js"
+    ],
     "rootNode": "6882b513-80d2-4877-80d0-922e96c16433",
     "openFiles": [
-      "eb050d4d-383c-4606-924d-701488dfa9bd",
-      "0a6cb0a8-7038-472e-8d99-04770a025f9a"
+      "eb050d4d-383c-4606-924d-701488dfa9bd"
     ],
-    "currentFileId": "0a6cb0a8-7038-472e-8d99-04770a025f9a",
+    "currentFileId": "eb050d4d-383c-4606-924d-701488dfa9bd",
     "resources": {},
     "envVariables": [
       {
@@ -79,7 +67,7 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
-    "lastSave": 1540295798253
+    "lastSave": 1540295836270
   },
   "VCS_STATE": {
     "provider": "GitHub",
