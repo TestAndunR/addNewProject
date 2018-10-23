@@ -31,7 +31,9 @@
         }
       }
     },
-    "deletedFiles": [],
+    "deletedFiles": [
+      "addNewProject/test.js.js"
+    ],
     "rootNode": "6882b513-80d2-4877-80d0-922e96c16433",
     "openFiles": [
       "eb050d4d-383c-4606-924d-701488dfa9bd"
@@ -65,7 +67,7 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
-    "lastSave": 1540295593636
+    "lastSave": 1540295672620
   },
   "VCS_STATE": {
     "provider": "GitHub",
