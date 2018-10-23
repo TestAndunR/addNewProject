@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "addNewProject/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nconsole.log(\"asasas\")\nexports.handler = function(event, context, callback) {\n    \n\n    console.log(\"User test for vcs state in git commit\");\n    callback(null,'Successfully executed');\n}",
+        "code": "let AWS = require('aws-sdk');\nlet SL_AWS = require('slappforge-sdk-aws');\nlet connectionManager = require('./ConnectionManager');\nconst rds = new SL_AWS.RDS(connectionManager);\nconsole.log(\"asasas\")\n\nexports.handler = function (event, context, callback) {\n\n\n    // You must always end/destroy the DB connection after it's used\n    rds.beginTransaction({\n        instanceIdentifier: 'bbb'\n    }, function (error, connection) {\n        if (error) {\n            throw error;\n        }\n    });\n\n    console.log(\"User test for vcs state in git commit\");\n    callback(null, 'Successfully executed');\n}",
         "triggers": [],
         "config": {
           "memory": 128,
@@ -32,14 +32,58 @@
       }
     },
     "deletedFiles": [
-      "addNewProject/test.js.js"
+      "addNewProject/ConnectionManager.js"
     ],
     "rootNode": "6882b513-80d2-4877-80d0-922e96c16433",
     "openFiles": [
       "eb050d4d-383c-4606-924d-701488dfa9bd"
     ],
     "currentFileId": "eb050d4d-383c-4606-924d-701488dfa9bd",
-    "resources": {},
+    "resources": {
+      "rds-bbb": {
+        "name": "rds-bbb",
+        "type": "RDS",
+        "config": {
+          "editMode": false,
+          "operation": 1,
+          "rdsInstance": {
+            "rdsEngineType": "mysql",
+            "rdsEdition": "",
+            "rdsInstanceSpec": {
+              "dbInstanceClass": "db.t2.micro",
+              "dbLicenseModel": "general-public-license",
+              "dbEngineVersion": "5.7.19"
+            },
+            "rdsSetting": {
+              "instanceIdentifier": "bbb",
+              "masterUsername": "hghghj",
+              "masterPassword": "jhghjgjhghjgjh"
+            },
+            "rdsDBOptions": {
+              "dbName": "ghfhgfhg",
+              "dbPort": "3306"
+            },
+            "rdsInstanceArn": "",
+            "Host": "",
+            "doesExist": false,
+            "initializationQuery": "",
+            "alreadyDeployed": false
+          },
+          "rdsInstanceResources": [],
+          "projectRegion": "us-east-1",
+          "mode": 0,
+          "additionalFiles": [],
+          "params": {
+            "query": "",
+            "inserts": ""
+          },
+          "isGlobalEditMode": false,
+          "enableInject": true,
+          "isNewFromGlobal": false
+        },
+        "globallyEditable": true
+      }
+    },
     "envVariables": [
       {
         "lambdaId": "all",
@@ -56,6 +100,11 @@
           "name": "aws-sdk",
           "version": "2.176.0",
           "notRemovable": true
+        },
+        "slappforge-sdk-aws": {
+          "name": "slappforge-sdk-aws",
+          "version": "0.0.5",
+          "notRemovable": false
         }
       }
     },
@@ -67,7 +116,7 @@
     "projectVersion": "1.0.0",
     "projectRegion": "us-east-1",
     "platform": "AWS",
-    "lastSave": 1540295836270
+    "lastSave": 1540295986469
   },
   "VCS_STATE": {
     "provider": "GitHub",
